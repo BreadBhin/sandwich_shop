@@ -16,7 +16,18 @@ class App extends StatelessWidget {
         body: const Center(child: Text('Welcome to the Sandwich Shop!'),),
     ),
   );
-}
+}}
+
+class OrderItemDisplay extends StatelessWidget {
+  final String itemType;
+  final int quantity;
+
+  const OrderItemDisplay(this.quantity, this.itemType, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text('This is a placeholder for OrderItemDisplay');
+  }
 }
 
 class MyApp extends StatelessWidget {
