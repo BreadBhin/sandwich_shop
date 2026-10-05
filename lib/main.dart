@@ -16,8 +16,11 @@ class App extends StatelessWidget {
           title: const Text('My Sandwich Shop'),
           backgroundColor: Colors.orange,
         ),
-        body: const Center(
-          child: OrderItemDisplay (5, 'footlong'),
+        body: Column(
+          const MainAxisAlignment(): MainAxisAlignment.center,
+          children: [
+            const OrderItemDisplay(5, 'Footlong')
+            Row()]
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
