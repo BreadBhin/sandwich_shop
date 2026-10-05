@@ -10,24 +10,33 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sandwich Shop App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Sandwich Shop'),
-          backgroundColor: Colors.orange,
-        ),
-        body: Column(
-          const MainAxisAlignment(): MainAxisAlignment.center,
-          children: [
-            const OrderItemDisplay(5, 'Footlong')
-            Row()]
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(Icons.add),
-        ),
-      )
-      );
+        title: 'Sandwich Shop App',
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('My Sandwich Shop'),
+            backgroundColor: Colors.orange,
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OrderItemDisplay(5, 'Footlong'),
+              Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () => print('Add'), child: const Text('Add')),
+                  const SizedBox (width: 67),
+                  ElevatedButton(
+                      onPressed: () => print('Remove'),
+                      child: const Text('Remove')),
+                ],
+              )
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            child: const Icon(Icons.add),
+          ),
+        ));
   }
 }
 
@@ -39,7 +48,8 @@ class OrderItemDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('$quantity $itemType sandwich(es): ${'🥪' * quantity}');
+    final sandwichIcons = List.filled(quantity, '🥪').join();
+    return Text('$quantity $itemType sandwich(es): $sandwichIcons');
   }
 }
 
