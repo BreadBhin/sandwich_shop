@@ -31,9 +31,9 @@ class SandwichCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        sandwich.name,
+                        sandwich.formattedPrice,
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -52,7 +52,7 @@ class SandwichCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '£${sandwich.price.toStringAsFixed(2)}',
+                  sandwich.formattedPrice,
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
